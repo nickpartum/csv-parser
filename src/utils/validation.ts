@@ -6,7 +6,7 @@ import {
     isValidPhone,
     isValidYearlyIncome
 } from "./validationRules"
-import {formatLicenseStates, formatPhone, formatYearlyIncome} from "./transform";
+import {formatHasChildren, formatLicenseStates, formatPhone, formatYearlyIncome} from "./transform";
 
 // Main function
 export const validation = (
@@ -97,7 +97,7 @@ const validateData = (data: Array<Array<string>>, headerTransformed: Array<strin
                     return returnObject(value, isValidAge)
                 case 'experience':
                     const ageIndex = headerTransformed.indexOf('age')
-                    if (!isValidAge(+row[ageIndex])) {
+                    if (!isValidAge(row[ageIndex])) {
                         return {value: value, hasError: true}
                     } else {
                         if (isValidExperience(+row[ageIndex], +value)) {
@@ -109,7 +109,7 @@ const validateData = (data: Array<Array<string>>, headerTransformed: Array<strin
                 case 'yearly_income':
                     return returnObject(value, isValidYearlyIncome, formatYearlyIncome)
                 case 'has_children':
-                    return returnObject(value, isValidHasChildren)
+                    return returnObject(value, isValidHasChildren, formatHasChildren)
                 case 'license_states':
                     return returnObject(value,e => e  ,formatLicenseStates)
                 case 'expiration_date':
