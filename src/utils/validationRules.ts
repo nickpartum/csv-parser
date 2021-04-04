@@ -1,7 +1,17 @@
 // Finish
-export const isValidAge = (age: number) => (age >= 21)
-export const isValidExperience = (age: number, experience: number) => ((experience >= 0) && (experience < age))
-export const isValidYearlyIncome = (yearlyIncome: number) => ((yearlyIncome >= 0) && (yearlyIncome <= 1e6))
+
+export const isValidAge = (age: string) => {
+    if(isNaN(+age)) return false
+    return (Number.isInteger(+age) && (+age >= 21))
+}
+export const isValidExperience = (age: number, experience: number) => {
+    if(isNaN(+age) || isNaN(experience)) return false
+    return ((experience >= 0) && (experience < age))
+}
+export const isValidYearlyIncome = (yearlyIncome: number) => {
+    if(isNaN(+yearlyIncome)) return false
+    return ((yearlyIncome >= 0) && (yearlyIncome <= 1e6))
+}
 export const isValidExpirationDate = (expirationDate: string) => {
     const reg1 = /^\d{4}-\d{2}-\d{2}$/  // YYYY-MM-DD
     const reg2 = /^\d{2}\/\d{2}\/\d{4}$/  // MM/DD/YYYY
