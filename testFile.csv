@@ -1,7 +1,7 @@
 Full   Name   ,  Phone,Email,Age,   Experience,Yearly Income,  Has children,License states,Expiration date,License number
 Some Person ,+11234567890,  some per@pr.com,30,2,1200.11,FALSE,  HI| Colorado | Hawaii,29.03.2020,1xr567
   Alex Cho2 ,10987654321,  alEx@Cho.com,26,25,1200,TRUE, Colorado | Hawaii,05/02/2021,1a2b83c
-  Alex Cho2 ,10987654321,  alEx@Ch1o.com,28.1,25,45624,TRUE, Colorado | Hawaii,03/29/2020,1a2b83c
+  Alex Cho2 ,10987654321,  alEx@Ch1o.com,28.1,25,45624,tRue, Colorado | Hawaii,03/29/2020,1a2b83c
   Alex Cho2 ,10987654321,  alEx@C2ho.com,26,25,10,TRUE, Colorado | GH,03/29/2020,
   Alex Cho89 ,10287654321,  alE@Cho.com,dfg,25,1200,TRUE, Colorado | Hawaii,03/29/2020,1a2b83c
   Alex Cho98 ,10387654321,  alx@Cho.com,26,25,2,TRUE, ,03/29/2023,1a2b83c
