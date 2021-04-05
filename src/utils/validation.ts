@@ -2,7 +2,7 @@ import {
     isEmptyValue,
     isValidAge,
     isValidEmail,
-    isValidExperience, isValidExpirationDate, isValidHasChildren, isValidLicenseNumber,
+    isValidExperience, isValidExpirationDate, isValidHasChildren, isValidLicenseNumber, isValidLicenseStates,
     isValidPhone,
     isValidYearlyIncome
 } from "./validationRules"
@@ -111,7 +111,7 @@ const validateData = (data: Array<Array<string>>, headerTransformed: Array<strin
                 case 'has_children':
                     return returnObject(value, isValidHasChildren, formatHasChildren)
                 case 'license_states':
-                    return returnObject(value,e => e  ,formatLicenseStates)
+                    return returnObject(value, isValidLicenseStates,formatLicenseStates)
                 case 'expiration_date':
                     return returnObject(value, isValidExpirationDate)
                 case 'license_number':

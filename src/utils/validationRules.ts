@@ -1,4 +1,4 @@
-// Finish
+import UsaStatesJson from "./usaStates.json";
 
 export const isValidAge = (age: string) => {
     if(isNaN(+age)) return false
@@ -39,5 +39,20 @@ export const isValidLicenseNumber = (licenseNumber: string) => {
     // Must have 6 digits or letters
     const regexp = /^\w{6}$/
     return regexp.test(licenseNumber);
+}
+// Add rule for states
+export const isValidLicenseStates = (licenseStates: string) => {
+    const licenseStatesArray = licenseStates.trim().replace(/ +/g, '').split('|')
+
+    return licenseStatesArray.every((stateName) => {
+        let hasState = false
+        for(const [fullName, abridgementName] of Object.entries(UsaStatesJson)) {
+            if(stateName === fullName || stateName === abridgementName){
+                hasState = true
+                break
+            }
+        }
+        return hasState
+    })
 }
 export const isEmptyValue = (value: string) => (value === '')
