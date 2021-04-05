@@ -33,7 +33,10 @@ export const isValidEmail = (email: string) => {
     return regexp.test(email)
 }
 export const isValidHasChildren = (hasChildren: string) => {
-    return ((hasChildren === 'TRUE') || (hasChildren === 'FALSE') || (hasChildren === ''))
+    const str = hasChildren.toLowerCase()
+    return ((str === 'true') || (str === 'false') || (str === ''))
+
+    // return ((hasChildren === 'TRUE') || (hasChildren === 'FALSE') || (hasChildren === ''))
 }
 export const isValidLicenseNumber = (licenseNumber: string) => {
     // Must have 6 digits or letters
